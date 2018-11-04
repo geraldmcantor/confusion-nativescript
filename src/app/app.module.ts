@@ -7,8 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NativeScriptHttpModule } from 'nativescript-angular/http';
 
 import { MenuComponent } from './menu/menu.component';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
+
 import { DishService } from './services/dish.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+
 import { baseURL } from './shared/baseurl';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -29,7 +32,8 @@ import { baseURL } from './shared/baseurl';
     ],
     declarations: [
         AppComponent,
-        MenuComponent
+        MenuComponent,
+        DishdetailComponent
     ],
     providers: [
         { provide: 'baseURL', useValue: baseURL },

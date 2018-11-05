@@ -1,0 +1,33 @@
+<ActionBar title="About Us" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <StackLayout class="p-5">
+        <StackLayout class="border">
+            <Label text="Our History" class="h3 p-10"></Label>
+            <StackLayout class="p-1">
+                <Label class="body" text="Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage from the A-list clientele in Hong Kong.  Featuring four of the best three-star Michelin chefs in the world, you never know what will arrive on your plate the next time you visit us." textWrap="true"></Label>
+                <Label class="body" text ="The restaurant traces its humble beginnings to The Frying Pan, a successful chain started by our CEO, Mr. Peter Pan, that featured for the first time the world's best cuisines in a pan." textWrap="true"></Label>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout>
+            <Label class="h3 p-10" text="Corporate Leadership"></Label>
+            <ListView [items]="leaders" class="list-group p-10" *ngIf="leaders">
+                <ng-template let-leader="item">
+                    <StackLayout class="list-group-item">
+                        <StackLayout orientation="horizontal">
+                            <Image [src]="baseURL + leader.image" class="thumb img-circle"></Image>
+                            <StackLayout>
+                                <Label [text]="leader.name" class="h3"></Label>
+                                <Label [text]="leader.designation" class="body"></Label>
+                                <Label [text]="leader.description" class="body" textWrap="true"></Label>   
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+            <ActivityIndicator busy="true"  *ngIf="!(leaders || errMess)" width="50" height="50" class="activity-indicator"></ActivityIndicator>
+            <Label *ngIf="errMess" [text]="'Error: ' + errMess"></Label>
+	</StackLayout>
+    </StackLayout>
+</StackLayout>

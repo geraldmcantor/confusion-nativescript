@@ -8,8 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NativeScriptHttpModule } from 'nativescript-angular/http';
 
 import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
+import { AboutComponent } from './about/about.component';
 
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
@@ -38,8 +40,10 @@ import { baseURL } from './shared/baseurl';
     declarations: [
         AppComponent,
         HomeComponent,
+        ContactComponent,
         MenuComponent,
-        DishdetailComponent
+        DishdetailComponent,
+        AboutComponent
     ],
     providers: [
         { provide: 'baseURL', useValue: baseURL },

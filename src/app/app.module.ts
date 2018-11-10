@@ -1,6 +1,7 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
@@ -13,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { AboutComponent } from './about/about.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
@@ -38,6 +40,7 @@ import { baseURL } from './shared/baseurl';
         NativeScriptHttpModule,
         HttpClientModule,
         NativeScriptUISideDrawerModule,
+        NativeScriptUIListViewModule,
         TNSFontIconModule.forRoot({
             'fa': './fonts/font-awesome.min.css'
         })
@@ -48,7 +51,8 @@ import { baseURL } from './shared/baseurl';
         ContactComponent,
         MenuComponent,
         DishdetailComponent,
-        AboutComponent
+        AboutComponent,
+        FavoritesComponent
     ],
     providers: [
         { provide: 'baseURL', useValue: baseURL },

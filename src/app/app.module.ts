@@ -26,6 +26,7 @@ import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
 import { FavoriteService } from './services/favorite.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+import { CouchbaseService } from './services/couchbase.service';
 
 import { baseURL } from './shared/baseurl';
 
@@ -74,6 +75,7 @@ import { baseURL } from './shared/baseurl';
         PromotionService,
         LeaderService,
         FavoriteService,
+        CouchbaseService,
         ProcessHTTPMsgService
     ],
     schemas: [

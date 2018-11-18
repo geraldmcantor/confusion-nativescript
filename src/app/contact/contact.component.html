@@ -23,6 +23,23 @@
                 <Label text="Tel: +852 1234 5678" class="m-l-30"></Label>
                 <Label text="Tel: +852 8765 4321" class="m-l-30"></Label>
                 <Label text="Email: confusion@food.net" class="m-l-30"></Label>
+                <GridLayout row="1"
+                            orientation="horizontal"
+                            rows="*"
+                            columns="*, *"
+                            class="m-t-20">
+                    <Button row="0"
+                            col="0" 
+                            [text]="('fa-phone' | fonticon) + ' Call'" 
+                            class="btn btn-rounded-sm btn-outline no-border fa">
+                    </Button>
+                    <Button row="0"
+                            col="1"
+                            [text]="('fa-envelope-o' | fonticon) + ' Email'"
+                            class="btn btn-rounded-sm btn-outline no-border fa"
+                            (tap)="sendEmail()">
+                    </Button>
+                </GridLayout>
             </StackLayout>
         </StackLayout>
     </StackLayout>

@@ -1,7 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
+import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 import * as enums from "ui/enums";
 import * as app from "application";
+import * as Email from 'nativescript-email';
 
 @Component({
   selector: 'app-menu',
@@ -15,13 +17,28 @@ import * as app from "application";
 // do not deduct points due to this class not extending DrawerPage.
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+    constructor(private fonticon: TNSFontIconService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
     }
+
+    sendEmail() {
+        Email.available()
+          .then((avail: boolean) => {
+            if (avail) {
+              Email.compose({
+                to: ['confusion@food.net'],
+                subject: '[ConFusion]: Query',
+                body: 'Dear Sir/Madam:'
+              });
+            }
+            else
+              console.log('No Email Configured');
+          });
+  }
 }

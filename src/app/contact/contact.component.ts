@@ -1,4 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { RadSideDrawer } from "nativescript-ui-sidedrawer";
+import * as enums from "ui/enums";
+import * as app from "application";
 
 @Component({
   selector: 'app-menu',
@@ -16,4 +19,9 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
   }
+
+    onDrawerButtonTap(): void {
+        const sideDrawer = <RadSideDrawer>app.getRootView();
+        sideDrawer.showDrawer();
+    }
 }

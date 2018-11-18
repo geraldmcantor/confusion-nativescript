@@ -9,7 +9,9 @@ import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 import { Page } from "ui/page";
 import { View } from "ui/core/view";
 import { SwipeGestureEventData, SwipeDirection } from "ui/gestures";
+import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as enums from "ui/enums";
+import * as app from "application";
 
 @Component({
   selector: 'app-home',
@@ -59,6 +61,11 @@ export class HomeComponent implements OnInit {
       else if (args.direction === SwipeDirection.right) {
         this.animateRight();
       }
+  }
+
+  onDrawerButtonTap(): void {
+      const sideDrawer = <RadSideDrawer>app.getRootView();
+      sideDrawer.showDrawer();
   }
 
   animateLeft() { 

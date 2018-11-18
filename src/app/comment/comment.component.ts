@@ -3,6 +3,9 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {TextField} from "tns-core-modules/ui/text-field";
 import { Slider } from "tns-core-modules/ui/slider";
 import { ModalDialogParams } from 'nativescript-angular/modal-dialog';
+import { RadSideDrawer } from "nativescript-ui-sidedrawer";
+import * as enums from "ui/enums";
+import * as app from "application";
 
 @Component({
     moduleId: module.id,
@@ -23,6 +26,11 @@ export class CommentComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+
+    onDrawerButtonTap(): void {
+        const sideDrawer = <RadSideDrawer>app.getRootView();
+        sideDrawer.showDrawer();
     }
 
     onAuthorChange(args) {
